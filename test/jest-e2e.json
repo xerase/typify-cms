@@ -11,7 +11,7 @@
     "^.+\\.(t|j)s$": "ts-jest"
   },
   "moduleNameMapper": {
-    "@app/xerase-cms/(.*)": "<rootDir>/../libs/xerase-cms/src/$1",
-    "@app/xerase-cms": "<rootDir>/../libs/xerase-cms/src"
+    "@app/xerase/(.*)": "<rootDir>/../libs/xerase/src/$1",
+    "@app/xerase": "<rootDir>/../libs/xerase/src"
   }
 }

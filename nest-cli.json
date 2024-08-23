@@ -7,13 +7,13 @@
     "webpack": true
   },
   "projects": {
-    "xerase-cms": {
+    "xerase": {
       "type": "library",
-      "root": "libs/xerase-cms",
+      "root": "libs/xerase",
       "entryFile": "index",
-      "sourceRoot": "libs/xerase-cms/src",
+      "sourceRoot": "libs/xerase/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/xerase-cms/tsconfig.lib.json"
+        "tsConfigPath": "libs/xerase/tsconfig.lib.json"
       }
     }
   }

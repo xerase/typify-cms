@@ -1,15 +1,15 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { XeraseCmsService } from './xerase-cms.service';
+import { XeraseService } from './xerase.service';
 
-describe('XeraseCmsService', () => {
-  let service: XeraseCmsService;
+describe('XeraseService', () => {
+  let service: XeraseService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      providers: [XeraseCmsService],
+      providers: [XeraseService],
     }).compile();
 
-    service = module.get<XeraseCmsService>(XeraseCmsService);
+    service = module.get<XeraseService>(XeraseService);
   });
 
   it('should be defined', () => {

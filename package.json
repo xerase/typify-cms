@@ -70,7 +70,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@app/xerase-cms(|/.*)$": "<rootDir>/libs/xerase-cms/src/$1"
+      "^@app/xerase(|/.*)$": "<rootDir>/libs/xerase/src/$1"
     }
   }
 }
