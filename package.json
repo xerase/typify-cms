@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A library that provides interfaces and utilities for writing net js applications",
   "author": "nimyab",
-  "private": true,
-  "license": "UNLICENSED",
+  "license": "MIT",
   "scripts": {
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
