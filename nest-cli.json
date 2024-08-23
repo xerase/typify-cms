@@ -7,13 +7,13 @@
     "webpack": true
   },
   "projects": {
-    "xerase": {
+    "nest-xerase": {
       "type": "library",
-      "root": "libs/xerase",
+      "root": "libs/nest-xerase",
       "entryFile": "index",
-      "sourceRoot": "libs/xerase/src",
+      "sourceRoot": "libs/nest-xerase/src",
       "compilerOptions": {
-        "tsConfigPath": "libs/xerase/tsconfig.lib.json"
+        "tsConfigPath": "libs/nest-xerase/tsconfig.lib.json"
       }
     }
   }

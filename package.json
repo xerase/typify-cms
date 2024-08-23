@@ -1,6 +1,6 @@
 {
-  "name": "xerase",
-  "version": "0.0.1",
+  "name": "nest-xerase",
+  "version": "0.1.0",
   "description": "",
   "author": "nimyab",
   "private": true,
@@ -70,7 +70,7 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
-      "^@app/xerase(|/.*)$": "<rootDir>/libs/xerase/src/$1"
+      "^@app/nest-xerase(|/.*)$": "<rootDir>/libs/nest-xerase/src/$1"
     }
   }
 }
