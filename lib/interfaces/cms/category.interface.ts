@@ -22,7 +22,7 @@ export interface CategoryController {
    */
   updateCategory: (id: number | string, body: UpdateCategory) => any;
   /**
-   * @Delete()
+   * @Delete(':id')
    *
    * @param id
    * @returns

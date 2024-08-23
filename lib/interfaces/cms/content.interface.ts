@@ -40,5 +40,5 @@ export interface ContentController {
    * @param slug
    * @returns
    */
-  getContentById: (slug: string) => any;
+  getContentBySlug: (slug: string) => any;
 }
