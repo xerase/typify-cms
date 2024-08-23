@@ -1,19 +1,19 @@
 {
   "name": "nest-xerase",
-  "version": "0.1.0",
-  "description": "",
+  "version": "1.0.0",
+  "description": "A library that provides interfaces and utilities for writing net js applications",
   "author": "nimyab",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "rimraf -rf dist && tsc -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"libs/**/*.ts\"",
-    "start": "nest start",
-    "start:dev": "nest start --watch",
-    "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
+    "prepublish:npm": "npm run build",
+    "publish:npm": "npm publish --access public",
+    "prepublish:next": "npm run build",
+    "publish:next": "npm publish --access public --tag next",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
@@ -72,5 +72,9 @@
     "moduleNameMapper": {
       "^@app/nest-xerase(|/.*)$": "<rootDir>/libs/nest-xerase/src/$1"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xerase/nest-xerase"
   }
 }

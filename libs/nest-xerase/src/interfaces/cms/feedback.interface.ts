@@ -1,7 +1,4 @@
-import {
-  CreateFeedbackMessage,
-  UpdateFeedbackMessage,
-} from '../../types/cms';
+import { CreateFeedbackMessage, UpdateFeedbackMessage } from '../../types/cms';
 
 /**
  * @Controller('cms/feedback')

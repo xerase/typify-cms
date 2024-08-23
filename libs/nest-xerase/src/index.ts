@@ -1,2 +1,2 @@
-export * from './xerase.module';
-export * from './xerase.service';
+export * from './interfaces/cms';
+export * from './types/cms';

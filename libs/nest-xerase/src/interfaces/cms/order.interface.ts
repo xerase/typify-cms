@@ -1,4 +1,4 @@
-import { AcceptOrder } from "../../types/cms";
+import { AcceptOrder } from '../../types/cms';
 
 /**
  * @Controller('cms/order')
