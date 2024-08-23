@@ -7,12 +7,14 @@ index.ts
 package-lock.json
 tslint.json
 tsconfig.json
+tsconfig.build.json
 .prettierrc
 .husky
 docker-compose.yml
 .release-it.json
 .eslintignore
 .eslintrc.js
+nest-cli.json
 
 # github
 .github
