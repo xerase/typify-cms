@@ -1,4 +1,4 @@
-import { CreateCategory, UpdateCategory } from '../../types/cms';
+import type { CreateCategory, UpdateCategory } from '@/lib';
 
 /**
  * @Controller('cms/category')
@@ -13,14 +13,6 @@ export interface CategoryController {
    * @returns
    */
   createCategory: (body: CreateCategory) => any;
-  /**
-   * @Patch(':id')
-   *
-   * @param id
-   * @param body
-   * @returns
-   */
-  updateCategory: (id: number | string, body: UpdateCategory) => any;
   /**
    * @Delete(':id')
    *
@@ -41,4 +33,12 @@ export interface CategoryController {
    * @returns
    */
   getCategoryById: (id: number | string) => any;
+  /**
+   * @Patch(':id')
+   *
+   * @param id
+   * @param body
+   * @returns
+   */
+  updateCategory: (id: number | string, body: UpdateCategory) => any;
 }

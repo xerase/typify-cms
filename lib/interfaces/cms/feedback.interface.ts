@@ -1,4 +1,7 @@
-import { CreateFeedbackMessage, UpdateFeedbackMessage } from '../../types/cms';
+import type {
+  CreateFeedbackMessage,
+  UpdateFeedbackMessage
+} from '@/lib';
 
 /**
  * @Controller('cms/feedback')
@@ -7,6 +10,13 @@ import { CreateFeedbackMessage, UpdateFeedbackMessage } from '../../types/cms';
  */
 export interface FeedbackController {
   /**
+   * @Patch('accept-feedback/:id')
+   *
+   * @param id
+   * @returns
+   */
+  acceptFeedback: (id: number | string) => any;
+  /**
    * @Post('message')
    *
    * @param body
@@ -14,16 +24,12 @@ export interface FeedbackController {
    */
   addFeedbackMessage: (body: CreateFeedbackMessage) => any;
   /**
-   * @Patch('message/:id')
+   * @Delete(':id')
    *
    * @param id
-   * @param body
    * @returns
    */
-  updateFeedbackMessage: (
-    id: number | string,
-    body: UpdateFeedbackMessage,
-  ) => any;
+  deleteFeedback: (id: number | string) => any;
   /**
    * @Delete('message/:id')
    *
@@ -32,12 +38,13 @@ export interface FeedbackController {
    */
   deleteFeedbackMessage: (id: number | string) => any;
   /**
-   * @Delete(':id')
+   * @Get()
    *
-   * @param id
+   * @param skip
+   * @param take
    * @returns
    */
-  deleteFeedback: (id: number | string) => any;
+  getAllFeedbacks: (skip: number, take: number) => any;
   /**
    * @Get(':article')
    *
@@ -52,25 +59,21 @@ export interface FeedbackController {
     take: number,
   ) => any;
   /**
-   * @Get()
-   *
-   * @param skip
-   * @param take
-   * @returns
-   */
-  getAllFeedbacks: (skip: number, take: number) => any;
-  /**
-   * @Patch('accept-feedback/:id')
-   *
-   * @param id
-   * @returns
-   */
-  acceptFeedback: (id: number | string) => any;
-  /**
    * @Patch('reject-feedback/:id')
    *
    * @param id
    * @returns
    */
   rejectFeedback: (id: number | string) => any;
+  /**
+   * @Patch('message/:id')
+   *
+   * @param id
+   * @param body
+   * @returns
+   */
+  updateFeedbackMessage: (
+    id: number | string,
+    body: UpdateFeedbackMessage,
+  ) => any;
 }

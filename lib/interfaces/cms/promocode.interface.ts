@@ -1,4 +1,4 @@
-import { CreatePromocode } from '../../types/cms';
+import type { CreatePromocode } from '@/lib';
 
 /**
  * @Controller('cms/promocode')

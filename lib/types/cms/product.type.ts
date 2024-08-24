@@ -1,6 +1,6 @@
 export type CreateProduct = {
-  title: string;
   subcategoryId: number;
+  title: string;
 };
 
 export type UpdateProduct = {

@@ -1,10 +1,10 @@
-import {
+import type {
   CreateProductVariant,
   UpdateProductVariant,
   UpdateProductVariantCount,
   UpdateProductVariantPrice,
-  UpdateProductVariantSale,
-} from '../../types/cms';
+  UpdateProductVariantSale
+} from '@/lib';
 
 /**
  * @Controller('cms/product-variant')
@@ -20,15 +20,34 @@ export interface ProductVariantController {
    */
   createProductVariant: (body: CreateProductVariant) => any;
   /**
-   * @Patch('sale/:article')
+   * @Delete(':article')
+   *
+   * @param article
+   * @returns
+   */
+  deleteProductVariant: (article: number | string) => any;
+  /**
+   * @Get(':article')
+   *
+   * @returns
+   */
+  getProductVariantByArticle: (article: number | string) => any;
+  /**
+   * @Get()
+   *
+   * @returns
+   */
+  getProductVariants: () => any;
+  /**
+   * @Patch(':article')
    *
    * @param article
    * @param body
    * @returns
    */
-  updateProductVariantSale: (
+  updateProductVariant: (
     article: number | string,
-    body: UpdateProductVariantSale,
+    body: UpdateProductVariant,
   ) => any;
   /**
    * @Patch('count/:article')
@@ -53,33 +72,14 @@ export interface ProductVariantController {
     body: UpdateProductVariantPrice,
   ) => any;
   /**
-   * @Patch(':article')
+   * @Patch('sale/:article')
    *
    * @param article
    * @param body
    * @returns
    */
-  updateProductVariant: (
+  updateProductVariantSale: (
     article: number | string,
-    body: UpdateProductVariant,
+    body: UpdateProductVariantSale,
   ) => any;
-  /**
-   * @Delete(':article')
-   *
-   * @param article
-   * @returns
-   */
-  deleteProductVariant: (article: number | string) => any;
-  /**
-   * @Get()
-   *
-   * @returns
-   */
-  getProductVariants: () => any;
-  /**
-   * @Get(':article')
-   *
-   * @returns
-   */
-  getProductVariantByArticle: (article: number | string) => any;
 }

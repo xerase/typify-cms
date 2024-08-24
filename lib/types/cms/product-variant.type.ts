@@ -1,62 +1,62 @@
 export type Option = {
-  description: string;
   color: string;
+  countryOfProduction: string;
+  description: string;
+  equipment: string[];
+  height: number;
+  material: string[];
   size: string;
   width: number;
-  height: number;
   daysForReturn?: number;
-  countryOfProduction: string;
-  equipment: string[];
-  material: string[];
 };
 
 export type OptionOptional = {
-  description?: string;
   color?: string;
+  countryOfProduction?: string;
+  daysForReturn?: number;
+  description?: string;
+  equipment?: string[];
+  height?: number;
+  material?: string[];
   size?: string;
   width?: number;
-  height?: number;
-  daysForReturn?: number;
-  countryOfProduction?: string;
-  equipment?: string[];
-  material?: string[];
 };
 
 export type DeliveryOption = {
-  width: number;
   height: number;
   length: number;
   weight: number;
+  width: number;
 };
 
 export type DeliveryOptionOptional = {
-  width?: number;
   height?: number;
   length?: number;
   weight?: number;
+  width?: number;
 };
 
 export type CreateProductVariant = {
-  images?: string[];
-  video?: string;
-  price: number;
-  sale?: number;
-  count?: number;
-  productId: number;
-  tags?: string[];
-  options: Option;
   deliveryOptions: DeliveryOption;
+  options: Option;
+  price: number;
+  productId: number;
+  count?: number;
+  images?: string[];
+  sale?: number;
+  tags?: string[];
+  video?: string;
 };
 
 export type UpdateProductVariant = {
+  count?: number;
+  deliveryOptions?: DeliveryOptionOptional;
   images?: string[];
-  video?: string;
+  options?: OptionOptional;
   price?: number;
   sale?: number;
-  count?: number;
   tags?: string[];
-  options?: OptionOptional;
-  deliveryOptions?: DeliveryOptionOptional;
+  video?: string;
 };
 
 export type UpdateProductVariantCount = {

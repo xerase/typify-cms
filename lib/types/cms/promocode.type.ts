@@ -1,5 +1,5 @@
 export type CreatePromocode = {
-  code: string;
   before: Date;
+  code: string;
   sale: number;
 };

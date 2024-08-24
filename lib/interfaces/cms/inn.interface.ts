@@ -12,13 +12,6 @@ export interface InnController {
    */
   acceptInn: (id: number | string) => any;
   /**
-   * @Patch('reject-inn/:id')
-   *
-   * @param id
-   * @returns
-   */
-  rejectInn: (id: number | string) => any;
-  /**
    * @Get()
    *
    * @param skip
@@ -26,4 +19,11 @@ export interface InnController {
    * @returns
    */
   getInns: (skip: number, take: number) => any;
+  /**
+   * @Patch('reject-inn/:id')
+   *
+   * @param id
+   * @returns
+   */
+  rejectInn: (id: number | string) => any;
 }

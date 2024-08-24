@@ -1,6 +1,6 @@
 export type CreateSubcategory = {
-  title: string;
   categoryId: number;
+  title: string;
 };
 
 export type UpdateSubcategory = {

@@ -1,4 +1,4 @@
-import { AcceptOrder } from '../../types/cms';
+import type { AcceptOrder } from '@/lib';
 
 /**
  * @Controller('cms/order')
@@ -15,13 +15,6 @@ export interface OrderController {
    */
   acceptOrder: (id: number | string, body: AcceptOrder) => any;
   /**
-   * @Patch('reject/:id')
-   *
-   * @param id
-   * @returns
-   */
-  rejectOrder: (id: number | string) => any;
-  /**
    * @Patch('cancel-accept/:id')
    *
    * @param id
@@ -36,13 +29,12 @@ export interface OrderController {
    */
   cancelRejectOrder: (id: number | string) => any;
   /**
-   * @Get('in-processing')
+   * @Patch('delivered/:id')
    *
-   * @param skip
-   * @param take
+   * @param id
    * @returns
    */
-  getInProcessingOrdersForAdmin: (skip: number, take: number) => any;
+  getInProcessingOrders: (skip: number, take: number) => any;
   /**
    * @Get('cancel-in-processing')
    *
@@ -50,7 +42,7 @@ export interface OrderController {
    * @param take
    * @returns
    */
-  getInProcessingCancelOrdersForAdmin: (skip: number, take: number) => any;
+  getInProcessingCancelOrders: (skip: number, take: number) => any;
   /**
    * @Get('all')
    *
@@ -60,10 +52,26 @@ export interface OrderController {
    */
   getAllOrdersForAdmin: (skip: number, take: number) => any;
   /**
-   * @Patch('delivered/:id')
+   * @Get('admin/cancel-in-processing')
+   *
+   * @param skip
+   * @param take
+   * @returns
+   */
+  getInProcessingCancelOrdersForAdmin: (skip: number, take: number) => any;
+  /**
+   * @Get('in-processing')
+   *
+   * @param skip
+   * @param take
+   * @returns
+   */
+  getInProcessingOrdersForAdmin: (skip: number, take: number) => any;
+  /**
+   * @Patch('reject/:id')
    *
    * @param id
    * @returns
    */
-  deliveredOrder: (id: number | string) => any;
+  rejectOrder: (id: number | string) => any;
 }
