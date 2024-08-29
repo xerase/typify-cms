@@ -39,6 +39,20 @@ export interface ProductVariantController {
    */
   getProductVariants: () => any;
   /**
+   * @Get('by-category/:id')
+   *
+   * @param id
+   * @returns
+   */
+  getProductVariantsByCategory: (id: number | string) => any;
+  /**
+   * @Get('by-product/:id')
+   *
+   * @param id
+   * @returns
+   */
+  getProductVariantsByProduct: (id: number | string) => any;
+  /**
    * @Patch(':article')
    *
    * @param article

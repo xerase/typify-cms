@@ -46,6 +46,14 @@ export interface FeedbackController {
    */
   getAllFeedbacks: (skip: number, take: number) => any;
   /**
+   * @Get('in-processing')
+   *
+   * @param skip
+   * @param take
+   * @returns
+   */
+  getInProcessingFeedbacks: (skip: number, take: number) => any;
+  /**
    * @Get(':article')
    *
    * @param article

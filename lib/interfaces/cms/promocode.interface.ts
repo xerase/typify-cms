@@ -20,7 +20,7 @@ export interface PromocodeController {
    */
   deletePromocode: (code: string) => any;
   /**
-   * @Get('all')
+   * @Get()
    *
    * @returns
    */

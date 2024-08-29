@@ -20,6 +20,14 @@ export interface InnController {
    */
   getInns: (skip: number, take: number) => any;
   /**
+   * @Get('in-processing')
+   *
+   * @param skip
+   * @param take
+   * @returns
+   */
+  getInProcessingInns: (skip: number, take: number) => any;
+  /**
    * @Patch('reject-inn/:id')
    *
    * @param id

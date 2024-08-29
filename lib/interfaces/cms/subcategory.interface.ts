@@ -24,7 +24,14 @@ export interface SubcategoryController {
    * @Get('all')
    * @returns
    */
-  getSubcategories: () => any;
+  getAllSubcategories: () => any;
+  /**
+   * @Get('by-category/:id')
+   *
+   * @param id
+   * @returns
+   */
+  getSubcategoriesByCategory: (id: number | string) => any;
   /**
    * @Get(':id')
    *

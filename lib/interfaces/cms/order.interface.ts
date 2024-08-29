@@ -34,7 +34,7 @@ export interface OrderController {
    * @param id
    * @returns
    */
-  getInProcessingOrders: (skip: number, take: number) => any;
+  deliveredOrder: (id: number | string) => any;
   /**
    * @Get('cancel-in-processing')
    *
@@ -50,15 +50,7 @@ export interface OrderController {
    * @param take
    * @returns
    */
-  getAllOrdersForAdmin: (skip: number, take: number) => any;
-  /**
-   * @Get('admin/cancel-in-processing')
-   *
-   * @param skip
-   * @param take
-   * @returns
-   */
-  getInProcessingCancelOrdersForAdmin: (skip: number, take: number) => any;
+  getAllOrders: (skip: number, take: number) => any;
   /**
    * @Get('in-processing')
    *
@@ -66,7 +58,7 @@ export interface OrderController {
    * @param take
    * @returns
    */
-  getInProcessingOrdersForAdmin: (skip: number, take: number) => any;
+  getInProcessingOrders: (skip: number, take: number) => any;
   /**
    * @Patch('reject/:id')
    *

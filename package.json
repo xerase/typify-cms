@@ -1,6 +1,6 @@
 {
   "name": "@xerase/nest-cms",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A library that provides interfaces and utilities for writing nestjs applications",
   "author": {
     "name": "nimyab",
