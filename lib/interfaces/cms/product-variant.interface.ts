@@ -1,5 +1,6 @@
 import type {
   CreateProductVariant,
+  ProductVariant,
   UpdateProductVariant,
   UpdateProductVariantCount,
   UpdateProductVariantPrice,
@@ -18,40 +19,46 @@ export interface ProductVariantController {
    * @param body
    * @returns
    */
-  createProductVariant: (body: CreateProductVariant) => any;
+  createProductVariant: (body: CreateProductVariant) => Promise<ProductVariant>;
+
   /**
    * @Delete(':article')
    *
    * @param article
    * @returns
    */
-  deleteProductVariant: (article: number | string) => any;
+  deleteProductVariant: (article: number | string) => Promise<ProductVariant>;
+
   /**
    * @Get(':article')
    *
    * @returns
    */
-  getProductVariantByArticle: (article: number | string) => any;
+  getProductVariantByArticle: (article: number | string) => Promise<ProductVariant | null>;
+
   /**
    * @Get()
    *
    * @returns
    */
-  getProductVariants: () => any;
+  getProductVariants: () => Promise<ProductVariant[]>;
+
   /**
    * @Get('by-category/:id')
    *
    * @param id
    * @returns
    */
-  getProductVariantsByCategory: (id: number | string) => any;
+  getProductVariantsByCategory: (id: number | string) => Promise<ProductVariant[]>;
+
   /**
    * @Get('by-product/:id')
    *
    * @param id
    * @returns
    */
-  getProductVariantsByProduct: (id: number | string) => any;
+  getProductVariantsByProduct: (id: number | string) => Promise<ProductVariant[]>;
+
   /**
    * @Patch(':article')
    *
@@ -61,8 +68,9 @@ export interface ProductVariantController {
    */
   updateProductVariant: (
     article: number | string,
-    body: UpdateProductVariant,
-  ) => any;
+    body: UpdateProductVariant
+  ) => Promise<ProductVariant>;
+
   /**
    * @Patch('count/:article')
    *
@@ -72,8 +80,9 @@ export interface ProductVariantController {
    */
   updateProductVariantCount: (
     article: number | string,
-    body: UpdateProductVariantCount,
-  ) => any;
+    body: UpdateProductVariantCount
+  ) => Promise<ProductVariant>;
+
   /**
    * @Patch('price/:article')
    *
@@ -83,8 +92,9 @@ export interface ProductVariantController {
    */
   updateProductVariantPrice: (
     article: number | string,
-    body: UpdateProductVariantPrice,
-  ) => any;
+    body: UpdateProductVariantPrice
+  ) => Promise<ProductVariant>;
+
   /**
    * @Patch('sale/:article')
    *
@@ -94,6 +104,6 @@ export interface ProductVariantController {
    */
   updateProductVariantSale: (
     article: number | string,
-    body: UpdateProductVariantSale,
-  ) => any;
+    body: UpdateProductVariantSale
+  ) => Promise<ProductVariant>;
 }

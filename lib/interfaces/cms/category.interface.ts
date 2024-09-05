@@ -1,4 +1,4 @@
-import type { CreateCategory, UpdateCategory } from '@/lib';
+import type { Category, CategoryWithSubcategories, CreateCategory, UpdateCategory } from '@/lib';
 
 /**
  * @Controller('cms/category')
@@ -12,27 +12,31 @@ export interface CategoryController {
    * @param body
    * @returns
    */
-  createCategory: (body: CreateCategory) => any;
+  createCategory: (body: CreateCategory) => Promise<Category>;
+
   /**
    * @Delete(':id')
    *
    * @param id
    * @returns
    */
-  deleteCategory: (id: number | string) => any;
+  deleteCategory: (id: number | string) => Promise<Category>;
+
   /**
    * @Get()
    *
    * @returns
    */
-  getCategories: () => any;
+  getCategories: () => Promise<CategoryWithSubcategories[]>;
+
   /**
    * @Get(':id')
    *
    * @param id
    * @returns
    */
-  getCategoryById: (id: number | string) => any;
+  getCategoryById: (id: number | string) => Promise<CategoryWithSubcategories | null>;
+
   /**
    * @Patch(':id')
    *
@@ -40,5 +44,5 @@ export interface CategoryController {
    * @param body
    * @returns
    */
-  updateCategory: (id: number | string, body: UpdateCategory) => any;
+  updateCategory: (id: number | string, body: UpdateCategory) => Promise<Category>;
 }

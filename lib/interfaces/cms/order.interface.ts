@@ -1,4 +1,4 @@
-import type { AcceptOrder } from '@/lib';
+import type { AcceptOrder, Order } from '@/lib';
 
 /**
  * @Controller('cms/order')
@@ -13,28 +13,32 @@ export interface OrderController {
    * @param body
    * @returns
    */
-  acceptOrder: (id: number | string, body: AcceptOrder) => any;
+  acceptOrder: (id: number | string, body: AcceptOrder) => Promise<Order>;
+
   /**
    * @Patch('cancel-accept/:id')
    *
    * @param id
    * @returns
    */
-  cancelAcceptOrder: (id: number | string) => any;
+  cancelAcceptOrder: (id: number | string) => Promise<Order>;
+
   /**
    * @Patch('cancel-reject/:id')
    *
    * @param id
    * @returns
    */
-  cancelRejectOrder: (id: number | string) => any;
+  cancelRejectOrder: (id: number | string) => Promise<Order>;
+
   /**
    * @Patch('delivered/:id')
    *
    * @param id
    * @returns
    */
-  deliveredOrder: (id: number | string) => any;
+  deliveredOrder: (id: number | string) => Promise<Order>;
+
   /**
    * @Get('cancel-in-processing')
    *
@@ -42,7 +46,8 @@ export interface OrderController {
    * @param take
    * @returns
    */
-  getInProcessingCancelOrders: (skip: number, take: number) => any;
+  getInProcessingCancelOrders: (skip: number, take: number) => Promise<Order[]>;
+
   /**
    * @Get('all')
    *
@@ -50,7 +55,8 @@ export interface OrderController {
    * @param take
    * @returns
    */
-  getAllOrders: (skip: number, take: number) => any;
+  getAllOrders: (skip: number, take: number) => Promise<Order[]>;
+
   /**
    * @Get('in-processing')
    *
@@ -58,12 +64,21 @@ export interface OrderController {
    * @param take
    * @returns
    */
-  getInProcessingOrders: (skip: number, take: number) => any;
+  getInProcessingOrders: (skip: number, take: number) => Promise<Order[]>;
+
+  /**
+   * @Get('one/:id')
+   *
+   * @param id
+   * @returns
+   */
+  getOrderById: (id: number | string) => Promise<Order | null>;
+
   /**
    * @Patch('reject/:id')
    *
    * @param id
    * @returns
    */
-  rejectOrder: (id: number | string) => any;
+  rejectOrder: (id: number | string) => Promise<Order>;
 }

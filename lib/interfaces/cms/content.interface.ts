@@ -1,4 +1,4 @@
-import type { CreateContent, UpdateContent } from '@/lib';
+import type { Content, CreateContent, UpdateContent } from '@/lib';
 
 /**
  * @Controller('cms/content')
@@ -12,27 +12,31 @@ export interface ContentController {
    * @param body
    * @returns
    */
-  createContent: (body: CreateContent) => any;
+  createContent: (body: CreateContent) => Promise<Content>;
+
   /**
    * @Delete(':slug')
    *
    * @param slug
    * @returns
    */
-  deleteContent: (slug: string) => any;
+  deleteContent: (slug: string) => Promise<Content>;
+
   /**
    * @Get(':slug')
    *
    * @param slug
    * @returns
    */
-  getContentBySlug: (slug: string) => any;
+  getContentBySlug: (slug: string) => Promise<Content | null>;
+
   /**
    * @Get()
    *
    * @returns
    */
-  getContents: () => any;
+  getContents: () => Promise<Content[]>;
+
   /**
    * @Patch(':slug')
    *
@@ -40,5 +44,5 @@ export interface ContentController {
    * @param body
    * @returns
    */
-  updateContent: (slug: string, body: UpdateContent) => any;
+  updateContent: (slug: string, body: UpdateContent) => Promise<Content>;
 }

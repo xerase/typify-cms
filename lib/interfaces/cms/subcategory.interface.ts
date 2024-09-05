@@ -1,4 +1,4 @@
-import type { CreateSubcategory, UpdateSubcategory } from '@/lib';
+import type { CreateSubcategory, Subcategory, UpdateSubcategory } from '@/lib';
 
 /**
  * @Controller('cms/subcategory')
@@ -12,40 +12,46 @@ export interface SubcategoryController {
    * @param body
    * @returns
    */
-  createSubcategory: (body: CreateSubcategory) => any;
+  createSubcategory: (body: CreateSubcategory) => Promise<Subcategory>;
+
   /**
    * @Delete(':id')
    *
    * @param id
    * @returns
    */
-  deleteSubcategory: (id: number | string) => any;
+  deleteSubcategory: (id: number | string) => Promise<Subcategory>;
+
   /**
    * @Get('all')
    * @returns
    */
-  getAllSubcategories: () => any;
+  getAllSubcategories: () => Promise<Subcategory[]>;
+
   /**
    * @Get('by-category/:id')
    *
    * @param id
    * @returns
    */
-  getSubcategoriesByCategory: (id: number | string) => any;
+  getSubcategoriesByCategory: (id: number | string) => Promise<Subcategory[]>;
+
   /**
    * @Get(':id')
    *
    * @param id
    * @returns
    */
-  getSubcategoryById: (id: number | string) => any;
+  getSubcategoryById: (id: number | string) => Promise<Subcategory | null>;
+
   /**
    * @Get('slug/:slug')
    *
    * @param slug
    * @returns
    */
-  getSubcategoryBySlug: (slug: string) => any;
+  getSubcategoryBySlug: (slug: string) => Promise<Subcategory | null>;
+
   /**
    * @Patch(':id')
    *
@@ -53,5 +59,8 @@ export interface SubcategoryController {
    * @param body
    * @returns
    */
-  updateSubcategory: (id: number | string, body: UpdateSubcategory) => any;
+  updateSubcategory: (
+    id: number | string,
+    body: UpdateSubcategory
+  ) => Promise<Subcategory>;
 }

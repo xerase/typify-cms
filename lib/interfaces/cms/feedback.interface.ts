@@ -1,5 +1,7 @@
 import type {
   CreateFeedbackMessage,
+  Feedback,
+  FeedbackMessage,
   UpdateFeedbackMessage
 } from '@/lib';
 
@@ -15,28 +17,32 @@ export interface FeedbackController {
    * @param id
    * @returns
    */
-  acceptFeedback: (id: number | string) => any;
+  acceptFeedback: (id: number | string) => Promise<Feedback>;
+
   /**
    * @Post('message')
    *
    * @param body
    * @returns
    */
-  addFeedbackMessage: (body: CreateFeedbackMessage) => any;
+  addFeedbackMessage: (body: CreateFeedbackMessage) => Promise<Feedback>;
+
   /**
    * @Delete(':id')
    *
    * @param id
    * @returns
    */
-  deleteFeedback: (id: number | string) => any;
+  deleteFeedback: (id: number | string) => Promise<Feedback>;
+
   /**
    * @Delete('message/:id')
    *
    * @param id
    * @returns
    */
-  deleteFeedbackMessage: (id: number | string) => any;
+  deleteFeedbackMessage: (id: number | string) => Promise<FeedbackMessage>;
+
   /**
    * @Get()
    *
@@ -44,7 +50,8 @@ export interface FeedbackController {
    * @param take
    * @returns
    */
-  getAllFeedbacks: (skip: number, take: number) => any;
+  getAllFeedbacks: (skip: number, take: number) => Promise<Feedback[]>;
+
   /**
    * @Get('in-processing')
    *
@@ -52,7 +59,8 @@ export interface FeedbackController {
    * @param take
    * @returns
    */
-  getInProcessingFeedbacks: (skip: number, take: number) => any;
+  getInProcessingFeedbacks: (skip: number, take: number) => Promise<Feedback[]>;
+
   /**
    * @Get(':article')
    *
@@ -64,15 +72,17 @@ export interface FeedbackController {
   getFeedbackByProductVariantArticle: (
     article: number | string,
     skip: number,
-    take: number,
-  ) => any;
+    take: number
+  ) => Promise<Feedback[]>;
+
   /**
    * @Patch('reject-feedback/:id')
    *
    * @param id
    * @returns
    */
-  rejectFeedback: (id: number | string) => any;
+  rejectFeedback: (id: number | string) => Promise<Feedback>;
+
   /**
    * @Patch('message/:id')
    *
@@ -82,6 +92,6 @@ export interface FeedbackController {
    */
   updateFeedbackMessage: (
     id: number | string,
-    body: UpdateFeedbackMessage,
-  ) => any;
+    body: UpdateFeedbackMessage
+  ) => Promise<FeedbackMessage>;
 }

@@ -1,4 +1,4 @@
-import type { CreateProduct, UpdateProduct } from '@/lib';
+import type { CreateProduct, Product, ProductWithProductVariants, UpdateProduct } from '@/lib';
 
 /**
  * @Controller('cms/product')
@@ -12,34 +12,39 @@ export interface ProductController {
    * @param body
    * @returns
    */
-  createProduct: (body: CreateProduct) => any;
+  createProduct: (body: CreateProduct) => Promise<Product>;
+
   /**
    * @Delete(':id')
    *
    * @param id
    * @returns
    */
-  deleteProduct: (id: number | string) => any;
+  deleteProduct: (id: number | string) => Promise<Product>;
+
   /**
    * @Get(':id')
    *
    * @param id
    * @returns
    */
-  getProductById: (id: number | string) => any;
+  getProductById: (id: number | string) => Promise<Product | ProductWithProductVariants | null>;
+
   /**
    * @Get(slug/:slug)
    *
    * @param slug
    * @returns
    */
-  getProductBySlug: (slug: string) => any;
+  getProductBySlug: (slug: string) => Promise<Product | ProductWithProductVariants | null>;
+
   /**
    * @Get()
    *
    * @returns
    */
-  getProducts: () => any;
+  getProducts: () => Promise<(Product | ProductWithProductVariants)[]>;
+
   /**
    * @Patch(':id')
    *
@@ -47,5 +52,5 @@ export interface ProductController {
    * @param body
    * @returns
    */
-  updateProduct: (id: number | string, body: UpdateProduct) => any;
+  updateProduct: (id: number | string, body: UpdateProduct) => Promise<Product>;
 }

@@ -1,4 +1,4 @@
-import type { CreatePromocode } from '@/lib';
+import type { CreatePromocode, PromocodeAllInfo } from '@/lib';
 
 /**
  * @Controller('cms/promocode')
@@ -12,17 +12,19 @@ export interface PromocodeController {
    * @param body
    * @returns
    */
-  createPromocode: (body: CreatePromocode) => any;
+  createPromocode: (body: CreatePromocode) => Promise<PromocodeAllInfo>;
+
   /**
    * @Delete(':code')
    *
    * @returns
    */
-  deletePromocode: (code: string) => any;
+  deletePromocode: (code: string) => Promise<PromocodeAllInfo>;
+
   /**
    * @Get()
    *
    * @returns
    */
-  getPromocodes: () => any;
+  getPromocodes: () => Promise<PromocodeAllInfo[]>;
 }

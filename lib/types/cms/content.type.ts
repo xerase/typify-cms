@@ -10,3 +10,9 @@ export type UpdateContent = {
   data?: string;
   type?: ContentType;
 };
+
+export type Content = {
+  data: string;
+  slug: string;
+  type: ContentType;
+};
