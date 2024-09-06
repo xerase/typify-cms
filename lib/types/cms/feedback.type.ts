@@ -15,9 +15,9 @@ export type FeedbackMessage = {
   updatedAt: Date;
   user: {
     id: number;
-    avatar: string;
+    avatar: string | null;
     firstName: string;
-    lastName: string;
+    lastName: string | null;
   };
   userId: number;
 };

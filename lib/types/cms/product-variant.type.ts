@@ -100,7 +100,7 @@ export type ProductVariant = {
   }[];
   images: string[];
   options: ProductVariantOptions | null;
-  price: true;
+  price: number;
   product: {
     id: number | string;
     slug: string;

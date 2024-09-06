@@ -19,12 +19,16 @@ export type DeliveryCompany = 'RU_POST';
 
 export type Order = {
   id: number | string;
-  additionalDiscount: number;
   barcode: string | null;
-  createdAt: Date;
+  paymentStatus: PaymentStatus;
+  status: OrderStatus;
+
+  additionalDiscount: number;
   deliveryCompany: DeliveryCompany;
   deliveryPrice: number;
-  paymentStatus: PaymentStatus;
+
+  userId: number | string;
+
   products: {
     id: number | string;
     count: number;
@@ -39,7 +43,7 @@ export type Order = {
       code: string;
       sale: number;
     };
-  };
+  }[];
   ruPostData: {
     id: number | string;
     createdAt: Date;
@@ -57,7 +61,7 @@ export type Order = {
     telAddress: string | null;
     updatedAt: Date;
   } | null;
-  status: OrderStatus;
+
+  createdAt: Date;
   updatedAt: Date;
-  userId: number | string;
 };
