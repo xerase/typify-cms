@@ -1,4 +1,4 @@
-import type { Content, CreateContent, UpdateContent } from '@/lib';
+import type { Content, CreateContent, UpdateContent } from '../../types/cms';
 
 /**
  * @Controller('cms/content')

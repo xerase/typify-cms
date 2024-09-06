@@ -4,8 +4,8 @@ import type {
   UpdateProductVariant,
   UpdateProductVariantCount,
   UpdateProductVariantPrice,
-  UpdateProductVariantSale
-} from '@/lib';
+  UpdateProductVariantSale,
+} from '../../types/cms';
 
 /**
  * @Controller('cms/product-variant')
@@ -34,7 +34,9 @@ export interface ProductVariantController {
    *
    * @returns
    */
-  getProductVariantByArticle: (article: number | string) => Promise<ProductVariant | null>;
+  getProductVariantByArticle: (
+    article: number | string
+  ) => Promise<ProductVariant | null>;
 
   /**
    * @Get()
@@ -49,7 +51,9 @@ export interface ProductVariantController {
    * @param id
    * @returns
    */
-  getProductVariantsByCategory: (id: number | string) => Promise<ProductVariant[]>;
+  getProductVariantsByCategory: (
+    id: number | string
+  ) => Promise<ProductVariant[]>;
 
   /**
    * @Get('by-product/:id')
@@ -57,7 +61,9 @@ export interface ProductVariantController {
    * @param id
    * @returns
    */
-  getProductVariantsByProduct: (id: number | string) => Promise<ProductVariant[]>;
+  getProductVariantsByProduct: (
+    id: number | string
+  ) => Promise<ProductVariant[]>;
 
   /**
    * @Patch(':article')

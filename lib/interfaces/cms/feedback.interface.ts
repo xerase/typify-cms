@@ -2,8 +2,8 @@ import type {
   CreateFeedbackMessage,
   Feedback,
   FeedbackMessage,
-  UpdateFeedbackMessage
-} from '@/lib';
+  UpdateFeedbackMessage,
+} from '../../types/cms';
 
 /**
  * @Controller('cms/feedback')

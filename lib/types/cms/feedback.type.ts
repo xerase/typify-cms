@@ -1,4 +1,4 @@
-import type { ProductVariant } from '@/lib';
+import type { ProductVariant } from '.';
 
 export type CreateFeedbackMessage = {
   text: string;

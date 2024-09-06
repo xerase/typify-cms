@@ -1,4 +1,4 @@
-import type { ProductVariantOptions } from '@/lib';
+import type { ProductVariantOptions } from '.';
 
 export type CreateProduct = {
   subcategoryId: number;

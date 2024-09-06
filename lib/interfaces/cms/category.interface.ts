@@ -1,4 +1,9 @@
-import type { Category, CategoryWithSubcategories, CreateCategory, UpdateCategory } from '@/lib';
+import type {
+  Category,
+  CategoryWithSubcategories,
+  CreateCategory,
+  UpdateCategory,
+} from '../../types/cms';
 
 /**
  * @Controller('cms/category')
@@ -35,7 +40,9 @@ export interface CategoryController {
    * @param id
    * @returns
    */
-  getCategoryById: (id: number | string) => Promise<CategoryWithSubcategories | null>;
+  getCategoryById: (
+    id: number | string
+  ) => Promise<CategoryWithSubcategories | null>;
 
   /**
    * @Patch(':id')
@@ -44,5 +51,8 @@ export interface CategoryController {
    * @param body
    * @returns
    */
-  updateCategory: (id: number | string, body: UpdateCategory) => Promise<Category>;
+  updateCategory: (
+    id: number | string,
+    body: UpdateCategory
+  ) => Promise<Category>;
 }

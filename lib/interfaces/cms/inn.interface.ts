@@ -1,4 +1,4 @@
-import type { Inn } from '@/lib';
+import type { Inn } from '../../types/cms';
 
 /**
  * @Controller('cms/inn')

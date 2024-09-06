@@ -1,4 +1,8 @@
-import type { CreateSubcategory, Subcategory, UpdateSubcategory } from '@/lib';
+import type {
+  CreateSubcategory,
+  Subcategory,
+  UpdateSubcategory,
+} from '../../types/cms';
 
 /**
  * @Controller('cms/subcategory')

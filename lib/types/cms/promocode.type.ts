@@ -1,4 +1,4 @@
-import type { Order } from '@/lib';
+import type { Order } from '.';
 
 export type CreatePromocode = {
   before: Date;
