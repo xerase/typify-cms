@@ -38,7 +38,7 @@ export interface ProductController {
   ) => Promise<Product | ProductWithProductVariants | null>;
 
   /**
-   * @Get(slug/:slug)
+   * @Get('slug/:slug')
    *
    * @param slug
    * @returns

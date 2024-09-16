@@ -1,4 +1,5 @@
 export * from './category.interface';
+export * from './chat.interface';
 export * from './content.interface';
 export * from './feedback.interface';
 export * from './inn.interface';
@@ -7,3 +8,4 @@ export * from './product-variant.interface';
 export * from './product.interface';
 export * from './promocode.interface';
 export * from './subcategory.interface';
+export * from './user.interface';
