@@ -14,7 +14,7 @@ export interface UserController {
    * @param body
    * @returns
    */
-  createAdmin: (body: CreateAdmin) => any;
+  createAdmin: (body: CreateAdmin) => Promise<Admin>;
 
   /**
    * @Get('admin/:email')
