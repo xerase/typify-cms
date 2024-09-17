@@ -1,8 +1,11 @@
 import type { Inn } from './inn.type';
 
+export type AdminRole = 'ADMIN' | 'SUPER_ADMIN';
+
 export type CreateAdmin = {
   email: string;
   password: string;
+  role: AdminRole;
 };
 
 export type Role = 'ADMIN' | 'SUPER_ADMIN' | 'USER';
@@ -16,7 +19,7 @@ export type Admin = {
   avatar: string | null;
   email: string;
   firstName: string;
-  lastName: string;
+  lastName: string | null;
   phone: string | null;
   role: Role;
   surname: string | null;
