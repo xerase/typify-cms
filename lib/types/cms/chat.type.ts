@@ -1,7 +1,7 @@
 import type { InnStatus, Role } from './user.type';
 
 export type CreateChatMessage = {
-  messageId: number | string;
+  chatId: number | string;
   text: string;
   images?: string[];
   productVariantArticle?: number | string;
