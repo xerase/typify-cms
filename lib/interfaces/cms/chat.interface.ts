@@ -16,48 +16,48 @@ export interface ChatController {
   /**
    * @Patch('create-message')
    *
-   * @param usesId
+   * @param userId
    * @param body
    * @returns
    */
   createMessage: (
-    usesId: number | string,
+    userId: number | string,
     body: CreateChatMessage
   ) => Promise<ChatMessage>;
 
   /**
    * @Patch('update-message')
    *
-   * @param usesId
+   * @param userId
    * @param body
    * @returns
    */
   updateMessage: (
-    usesId: number | string,
+    userId: number | string,
     body: UpdateChatMessage
   ) => Promise<ChatMessage>;
 
   /**
    * @Patch('delete-message')
    *
-   * @param usesId
+   * @param userId
    * @param body
    * @returns
    */
   deleteMessage: (
-    usesId: number | string,
+    userId: number | string,
     body: DeleteChatMessage
   ) => Promise<{ chatId: number | string; messageId: number | string }>;
 
   /**
    * @Patch('read-chat-messages')
    *
-   * @param usesId
+   * @param userId
    * @param body
    * @returns
    */
   readChatMessages: (
-    usesId: number | string,
+    userId: number | string,
     body: ReadChatMessage
   ) => Promise<{ chatId: number | string; messageIds: (number | string)[] }>;
 

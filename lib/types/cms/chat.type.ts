@@ -8,10 +8,10 @@ export type CreateChatMessage = {
 };
 
 export type UpdateChatMessage = {
-  images: string[];
   messageId: number | string;
-  productVariantArticle: number | string;
-  text: string;
+  images?: string[];
+  productVariantArticle?: number | string;
+  text?: string;
 };
 
 export type DeleteChatMessage = {
@@ -41,18 +41,18 @@ export type ChatMessage = {
   messageStatus: MessageStatus;
   productVariant: {
     article: number | string;
-    images: string;
+    images: string[];
     slug: string;
   } | null;
   text: string;
   updatedAt: Date;
   user: {
     id: number | string;
-    avatar: string;
+    avatar: string | null;
     email: string;
     firstName: string;
     innStatus: InnStatus;
-    lastName: string;
+    lastName: string | null;
     phone: string | null;
     role: Role;
     surname: string | null;
