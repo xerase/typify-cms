@@ -34,7 +34,6 @@ export type Order = {
     count: number;
     price: number;
     productVariant: ProductVariant;
-    productVariantArticle: number | string;
     sale: number;
   }[];
   promocodeOnOrder: {
