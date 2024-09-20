@@ -30,7 +30,7 @@ export interface OptionController {
   createOptionVariant: (body: CreateOptionVariant) => Promise<OptionVariant>;
 
   /**
-   * @Patch()
+   * @Patch(':id')
    *
    * @param id
    * @param body
@@ -42,7 +42,7 @@ export interface OptionController {
   ) => Promise<Option>;
 
   /**
-   * @Patch('variant')
+   * @Patch('variant/:id')
    *
    * @param id
    * @param body
