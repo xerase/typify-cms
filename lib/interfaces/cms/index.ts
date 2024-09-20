@@ -3,6 +3,7 @@ export * from './chat.interface';
 export * from './content.interface';
 export * from './feedback.interface';
 export * from './inn.interface';
+export * from './option.interface';
 export * from './order.interface';
 export * from './product-variant.interface';
 export * from './product.interface';

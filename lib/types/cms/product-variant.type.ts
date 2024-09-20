@@ -1,27 +1,3 @@
-export type Option = {
-  color: string;
-  countryOfProduction: string;
-  description: string;
-  equipment: string[];
-  height: number;
-  material: string[];
-  size: string;
-  width: number;
-  daysForReturn?: number;
-};
-
-export type OptionOptional = {
-  color?: string;
-  countryOfProduction?: string;
-  daysForReturn?: number;
-  description?: string;
-  equipment?: string[];
-  height?: number;
-  material?: string[];
-  size?: string;
-  width?: number;
-};
-
 export type DeliveryOption = {
   height: number;
   length: number;
@@ -38,10 +14,14 @@ export type DeliveryOptionOptional = {
 
 export type CreateProductVariant = {
   deliveryOptions: DeliveryOption;
-  options: Option;
+  mainOptionId: number | string;
+  optionalOptionIds: (number | string)[];
   price: number;
   productId: number;
+  subvariantOptionIds: (number | string)[];
+  title: string;
   count?: number;
+  description?: string;
   images?: string[];
   sale?: number;
   tags?: string[];
@@ -50,13 +30,20 @@ export type CreateProductVariant = {
 
 export type UpdateProductVariant = {
   count?: number;
-  deliveryOptions?: DeliveryOptionOptional;
+  description?: string;
   images?: string[];
-  options?: OptionOptional;
   price?: number;
   sale?: number;
   tags?: string[];
+  title?: string;
   video?: string;
+
+  addedOptionalOptionIds?: (number | string)[];
+  addedSubvariantOptionIds?: (number | string)[];
+  deletedOptionalOptionIds?: (number | string)[];
+  deletedSubvariantOptionIds?: (number | string)[];
+
+  deliveryOptions?: DeliveryOptionOptional;
 };
 
 export type UpdateProductVariantCount = {
@@ -71,18 +58,6 @@ export type UpdateProductVariantSale = {
   sale: number;
 };
 
-export type ProductVariantOptions = {
-  color: string;
-  countryOfProduction: string;
-  daysForReturn: number;
-  description: string;
-  equipment: string[];
-  height: number;
-  material: string[];
-  size: string;
-  width: number;
-};
-
 export type ProductVariantDeliveryOptions = {
   height: number;
   length: number;
@@ -90,17 +65,34 @@ export type ProductVariantDeliveryOptions = {
   width: number;
 };
 
+export type OptionVariantForProductVariant = {
+  optionVariant: {
+    id: number | string;
+    content: string;
+    option: {
+      id: number | string;
+      title: string;
+      type: string;
+    };
+  };
+};
+
 export type ProductVariant = {
   article: number | string;
   count: number;
-  createdAt: Date;
-  deliveryOptions: ProductVariantDeliveryOptions | null;
+  description: string;
+  images: string[];
+  price: number;
+  sale: number;
+  slug: string;
+  soldCount: number;
+  tags: string[];
+  title: string;
+
   feedbacks: {
     rating: number;
   }[];
-  images: string[];
-  options: ProductVariantOptions | null;
-  price: number;
+
   product: {
     id: number | string;
     slug: string;
@@ -116,9 +108,12 @@ export type ProductVariant = {
     };
     title: string;
   };
-  sale: number;
-  slug: string;
-  soldCount: number;
-  tags: string[];
+
+  deliveryOptions: ProductVariantDeliveryOptions | null;
+  mainOption: OptionVariantForProductVariant | null;
+  optionalOptions: OptionVariantForProductVariant[];
+  subvariantOptions: OptionVariantForProductVariant[];
+
+  createdAt: Date;
   updatedAt: Date;
 };

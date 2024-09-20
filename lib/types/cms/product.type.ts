@@ -1,4 +1,4 @@
-import type { ProductVariantOptions } from '.';
+import type { OptionVariantForProductVariant } from '.';
 
 export type CreateProduct = {
   subcategoryId: number;
@@ -34,15 +34,22 @@ export type ProductWithProductVariants = {
   productVariants: {
     article: number | string;
     count: number;
-    feedbacks: {
-      rating: number;
-    }[];
+    description: string;
     images: string[];
-    options: ProductVariantOptions;
     price: number;
     sale: number;
     slug: string;
     soldCount: number;
+    tags: string[];
+    title: string;
+
+    feedbacks: {
+      rating: number;
+    }[];
+
+    mainOption: OptionVariantForProductVariant | null;
+    optionalOptions: OptionVariantForProductVariant[];
+    subvariantOptions: OptionVariantForProductVariant[];
   }[];
 
   createdAt: Date;
