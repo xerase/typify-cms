@@ -31,7 +31,7 @@ export interface FeedbackController {
     id: number | string,
     userId: number | string,
     body: CreateFeedbackMessage
-  ) => Promise<Feedback>;
+  ) => Promise<FeedbackMessage>;
 
   /**
    * @Delete(':id')
