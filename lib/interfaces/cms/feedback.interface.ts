@@ -20,12 +20,18 @@ export interface FeedbackController {
   acceptFeedback: (id: number | string) => Promise<Feedback>;
 
   /**
-   * @Post('message')
+   * @Post('message/:id')
+   * id - feedbackId
+   *
    *
    * @param body
    * @returns
    */
-  addFeedbackMessage: (body: CreateFeedbackMessage) => Promise<Feedback>;
+  addFeedbackMessage: (
+    id: number | string,
+    userId: number | string,
+    body: CreateFeedbackMessage
+  ) => Promise<Feedback>;
 
   /**
    * @Delete(':id')
@@ -37,11 +43,15 @@ export interface FeedbackController {
 
   /**
    * @Delete('message/:id')
+   * userId - @Query('user-id')
    *
    * @param id
    * @returns
    */
-  deleteFeedbackMessage: (id: number | string) => Promise<FeedbackMessage>;
+  deleteFeedbackMessage: (
+    id: number | string,
+    userId: number | string
+  ) => Promise<FeedbackMessage>;
 
   /**
    * @Get()
@@ -85,6 +95,7 @@ export interface FeedbackController {
 
   /**
    * @Patch('message/:id')
+   * userId - @Query('user-id')
    *
    * @param id
    * @param body
@@ -92,6 +103,7 @@ export interface FeedbackController {
    */
   updateFeedbackMessage: (
     id: number | string,
+    userId: number | string,
     body: UpdateFeedbackMessage
   ) => Promise<FeedbackMessage>;
 }
