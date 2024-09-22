@@ -24,6 +24,8 @@ export interface FeedbackController {
    * id - feedbackId
    *
    *
+   * @param id
+   * @param userId
    * @param body
    * @returns
    */
@@ -46,6 +48,7 @@ export interface FeedbackController {
    * userId - @Query('user-id')
    *
    * @param id
+   * @param userId
    * @returns
    */
   deleteFeedbackMessage: (
@@ -98,6 +101,7 @@ export interface FeedbackController {
    * userId - @Query('user-id')
    *
    * @param id
+   * @param userId
    * @param body
    * @returns
    */
