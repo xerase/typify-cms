@@ -22,7 +22,7 @@ export interface FeedbackController {
   /**
    * @Post('message/:id')
    * id - feedbackId
-   *
+   * userId - @Query('user-id')
    *
    * @param id
    * @param userId
