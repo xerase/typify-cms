@@ -2,7 +2,6 @@ import type {
   CreateProduct,
   Product,
   ProductWithProductVariants,
-  UpdateProduct,
 } from '../../types/cms';
 
 /**
@@ -38,28 +37,9 @@ export interface ProductController {
   ) => Promise<Product | ProductWithProductVariants | null>;
 
   /**
-   * @Get('slug/:slug')
-   *
-   * @param slug
-   * @returns
-   */
-  getProductBySlug: (
-    slug: string
-  ) => Promise<Product | ProductWithProductVariants | null>;
-
-  /**
    * @Get()
    *
    * @returns
    */
   getProducts: () => Promise<(Product | ProductWithProductVariants)[]>;
-
-  /**
-   * @Patch(':id')
-   *
-   * @param id
-   * @param body
-   * @returns
-   */
-  updateProduct: (id: number | string, body: UpdateProduct) => Promise<Product>;
 }
