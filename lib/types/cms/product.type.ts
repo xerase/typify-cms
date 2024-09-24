@@ -2,11 +2,6 @@ import type { OptionVariantForProductVariant } from '.';
 
 export type CreateProduct = {
   subcategoryId: number;
-  title: string;
-};
-
-export type UpdateProduct = {
-  title: string;
 };
 
 export type Product = {
