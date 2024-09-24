@@ -17,7 +17,7 @@ export type CreateProductVariant = {
   mainOptionId: number | string;
   optionalOptionIds: (number | string)[];
   price: number;
-  productId: number;
+  productId: number | string;
   subvariantOptionIds: (number | string)[];
   title: string;
   count?: number;
