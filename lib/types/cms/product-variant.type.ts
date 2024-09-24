@@ -95,7 +95,6 @@ export type ProductVariant = {
 
   product: {
     id: number | string;
-    slug: string;
     subcategory: {
       id: number | string;
       category: {
@@ -106,7 +105,6 @@ export type ProductVariant = {
       slug: string;
       title: string;
     };
-    title: string;
   };
 
   deliveryOptions: ProductVariantDeliveryOptions | null;
