@@ -48,22 +48,23 @@ export type ChatMessage = {
   updatedAt: Date;
   user: {
     id: number | string;
-    email: string;
-    firstName: string;
-    innStatus: InnStatus;
-    role: Role;
-    avatar?: string | null;
-    lastName?: string | null;
-    phone?: string | null;
-    surname?: string | null;
   };
 };
 
 export type Chat = {
   id: number | string;
   chatOnUser: {
-    chatId: number | string;
-    userId: number | string;
+    user: {
+      id: number | string;
+      email: string;
+      firstName: string;
+      innStatus: InnStatus;
+      role: Role;
+      avatar?: string | null;
+      lastName?: string | null;
+      phone?: string | null;
+      surname?: string | null;
+    };
   }[];
   chatStatus: ChatStatus;
   messages: ChatMessage[];
