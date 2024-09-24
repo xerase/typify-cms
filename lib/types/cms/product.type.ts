@@ -11,25 +11,20 @@ export type UpdateProduct = {
 
 export type Product = {
   id: number | string;
-  slug: string;
+
   subcategory: {
     id: number | string;
     title: string;
   };
-  title: string;
-
-  createdAt: Date;
-  updatedAt: Date;
 };
 
 export type ProductWithProductVariants = {
   id: number | string;
-  slug: string;
+
   subcategory: {
     id: number | string;
     title: string;
   };
-  title: string;
 
   productVariants: {
     article: number | string;
@@ -51,7 +46,4 @@ export type ProductWithProductVariants = {
     optionalOptions: OptionVariantForProductVariant[];
     subvariantOptions: OptionVariantForProductVariant[];
   }[];
-
-  createdAt: Date;
-  updatedAt: Date;
 };
