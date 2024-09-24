@@ -48,14 +48,14 @@ export type ChatMessage = {
   updatedAt: Date;
   user: {
     id: number | string;
-    avatar: string | null;
     email: string;
     firstName: string;
     innStatus: InnStatus;
-    lastName: string | null;
-    phone: string | null;
     role: Role;
-    surname: string | null;
+    avatar?: string | null;
+    lastName?: string | null;
+    phone?: string | null;
+    surname?: string | null;
   };
 };
 
