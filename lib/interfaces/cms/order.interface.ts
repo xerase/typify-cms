@@ -83,8 +83,8 @@ export interface OrderController {
    * @param id
    * @param minCost
    * @param maxCost
-   * @param minData
-   * @param maxData
+   * @param minDate
+   * @param maxDate
    * @returns
    */
   getOrderByParams: (
@@ -95,8 +95,8 @@ export interface OrderController {
     userType?: 'NO_MATTER' | 'RETAIL' | 'WHOLESALE',
     minCost?: number,
     maxCost?: number,
-    minData?: Date,
-    maxData?: Date
+    minDate?: Date,
+    maxDate?: Date
   ) => Promise<Order[]>;
 
   /**
