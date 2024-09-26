@@ -81,6 +81,8 @@ export interface OrderController {
    * @param phone
    * @param fio
    * @param id
+   * @param userType
+   * @param status
    * @param minCost
    * @param maxCost
    * @param minDate
@@ -93,6 +95,7 @@ export interface OrderController {
     fio?: string,
     id?: number | string,
     userType?: 'NO_MATTER' | 'RETAIL' | 'WHOLESALE',
+    status?: 'DELIVERED' | 'IN_PROCESSING' | 'ON_THE_WAY',
     minCost?: number,
     maxCost?: number,
     minDate?: Date,
