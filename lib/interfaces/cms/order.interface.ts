@@ -75,6 +75,30 @@ export interface OrderController {
   getOrderById: (id: number | string) => Promise<Order | null>;
 
   /**
+   * @Get('by-params')
+   *
+   * @param email
+   * @param phone
+   * @param fio
+   * @param id
+   * @param minCost
+   * @param maxCost
+   * @param minData
+   * @param maxData
+   * @returns
+   */
+  getOrderByParams: (
+    email?: string,
+    phone?: string,
+    fio?: string,
+    id?: number | string,
+    minCost?: number,
+    maxCost?: number,
+    minData?: Date,
+    maxData?: Date
+  ) => Promise<Order[]>;
+
+  /**
    * @Patch('reject/:id')
    *
    * @param id
