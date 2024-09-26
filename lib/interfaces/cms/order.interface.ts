@@ -92,6 +92,7 @@ export interface OrderController {
     phone?: string,
     fio?: string,
     id?: number | string,
+    userType?: 'NO_MATTER' | 'RETAIL' | 'WHOLESALE',
     minCost?: number,
     maxCost?: number,
     minData?: Date,
