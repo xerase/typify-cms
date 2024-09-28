@@ -1,6 +1,6 @@
 {
   "name": "@xerase/typify-cms",
-  "version": "1.1.27",
+  "version": "1.1.28",
   "description": "A library that provides interfaces and utilities for writing nest.js applications",
   "author": {
     "name": "nimyab",
@@ -35,8 +35,8 @@
     "types": "tsc --noEmit -p ./tsconfig.json",
     "lint-staged": "lint-staged",
     "prepare": "simple-git-hooks",
-    "prepublish": "pnpm build",
-    "publish": "bumpp && pnpm publish"
+    "prerelease": "pnpm build",
+    "release": "bumpp && pnpm publish"
   },
   "dependencies": {
     "@nestjs/common": "^10.4.4",
