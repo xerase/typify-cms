@@ -1,4 +1,4 @@
-import type { AcceptOrder, Order } from '../../types/cms';
+import type { AcceptOrder, Order, OrderWithUser } from '../../types/cms';
 
 /**
  * @Controller('cms/order')
@@ -87,6 +87,7 @@ export interface OrderController {
    * @param maxCost
    * @param minDate
    * @param maxDate
+   * @param withUser
    * @returns
    */
   getOrderByParams: (
@@ -99,8 +100,9 @@ export interface OrderController {
     minCost?: number,
     maxCost?: number,
     minDate?: Date,
-    maxDate?: Date
-  ) => Promise<Order[]>;
+    maxDate?: Date,
+    withUser?: boolean
+  ) => Promise<(Order | OrderWithUser)[]>;
 
   /**
    * @Patch('reject/:id')

@@ -1,4 +1,4 @@
-import type { ProductVariant } from '.';
+import type { ProductVariant, User } from '.';
 
 export type AcceptOrder = {
   barcode: string;
@@ -63,4 +63,8 @@ export type Order = {
 
   createdAt: Date;
   updatedAt: Date;
+};
+
+export type OrderWithUser = Order & {
+  user: User;
 };
