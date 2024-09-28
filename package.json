@@ -35,7 +35,7 @@
     "types": "tsc --noEmit -p ./tsconfig.json",
     "lint-staged": "lint-staged",
     "prepare": "simple-git-hooks",
-    "prepublish": "npm run build",
+    "prepublish": "pnpm build",
     "publish": "bumpp && pnpm publish"
   },
   "dependencies": {
