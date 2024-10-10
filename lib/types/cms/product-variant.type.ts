@@ -14,7 +14,7 @@ export type DeliveryOptionOptional = {
 
 export type CreateProductVariant = {
   deliveryOptions: DeliveryOption;
-  mainOptionId: (number | string)[];
+  mainOptionIds: (number | string)[];
   optionalOptionIds: (number | string)[];
   price: number;
   productId: number | string;
