@@ -108,7 +108,7 @@ export type ProductVariant = {
   };
 
   deliveryOptions: ProductVariantDeliveryOptions | null;
-  mainOption: OptionVariantForProductVariant[];
+  mainOptions: OptionVariantForProductVariant[];
   optionalOptions: OptionVariantForProductVariant[];
 
   createdAt: Date;
