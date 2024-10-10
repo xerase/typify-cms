@@ -14,11 +14,10 @@ export type DeliveryOptionOptional = {
 
 export type CreateProductVariant = {
   deliveryOptions: DeliveryOption;
-  mainOptionId: number | string;
+  mainOptionId: (number | string)[];
   optionalOptionIds: (number | string)[];
   price: number;
   productId: number | string;
-  subvariantOptionIds: (number | string)[];
   title: string;
   count?: number;
   description?: string;
@@ -39,9 +38,7 @@ export type UpdateProductVariant = {
   video?: string;
 
   addedOptionalOptionIds?: (number | string)[];
-  addedSubvariantOptionIds?: (number | string)[];
   deletedOptionalOptionIds?: (number | string)[];
-  deletedSubvariantOptionIds?: (number | string)[];
 
   deliveryOptions?: DeliveryOptionOptional;
 };
