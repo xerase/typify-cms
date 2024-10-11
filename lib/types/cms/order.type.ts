@@ -33,7 +33,7 @@ export type Order = {
     id: number | string;
     count: number;
     price: number;
-    productVariant: ProductVariant;
+    productVariant: ProductVariant | null;
     sale: number;
   }[];
   promocodeOnOrder: {
