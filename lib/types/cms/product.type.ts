@@ -37,8 +37,7 @@ export type ProductWithProductVariants = {
       rating: number;
     }[];
 
-    mainOption: OptionVariantForProductVariant | null;
+    mainOptions: OptionVariantForProductVariant[];
     optionalOptions: OptionVariantForProductVariant[];
-    subvariantOptions: OptionVariantForProductVariant[];
   }[];
 };
