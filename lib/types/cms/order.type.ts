@@ -6,7 +6,9 @@ export type AcceptOrder = {
 
 export type OrderStatus =
   | 'CANCEL_ACCEPT'
+  | 'CANCEL_DELIVERED'
   | 'CANCEL_IN_PROCESSING'
+  | 'CANCEL_ON_THE_WAY'
   | 'CANCEL_REJECT'
   | 'DELIVERED'
   | 'IN_PROCESSING'
