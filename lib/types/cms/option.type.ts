@@ -18,4 +18,5 @@ export type Option = {
   id: number | string;
   optionVariants: OptionVariant[];
   title: string;
+  type: string;
 };
