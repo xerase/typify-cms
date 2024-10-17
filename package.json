@@ -1,6 +1,6 @@
 {
   "name": "@xerase/typify-cms",
-  "version": "1.1.42",
+  "version": "1.1.43",
   "description": "A library that provides interfaces and utilities for writing nest.js applications",
   "author": {
     "name": "nimyab",
