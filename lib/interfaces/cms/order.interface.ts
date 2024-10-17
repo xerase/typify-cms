@@ -16,6 +16,14 @@ export interface OrderController {
   acceptOrder: (id: number | string, body: AcceptOrder) => Promise<Order>;
 
   /**
+   * @Patch('payment-confirmation/:id')
+   *
+   * @param id
+   * @returns
+   */
+  paymentConfirmation: (id: number | string) => Promise<Order>;
+
+  /**
    * @Patch('cancel-accept/:id')
    *
    * @param id

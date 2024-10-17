@@ -43,6 +43,7 @@ export type Order = {
       sale: number;
     };
   }[];
+  orderPayment: { formUrl: string; orderPaymentId: string } | null;
   ruPostData: {
     id: number | string;
     createdAt: Date;
