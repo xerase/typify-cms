@@ -38,4 +38,7 @@ export type User = {
   ransom: number;
   role: Role;
   surname: string | null;
+
+  createdAt: Date;
+  updatedAt: Date;
 };
