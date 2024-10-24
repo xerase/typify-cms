@@ -36,13 +36,14 @@ export type Settings = {
   orderNotification: boolean;
   discountNotification: boolean;
 
-  ruPostMainAddressId: number | null;
+  ruPostMainAddressId: number | string | null;
   ruPostAddresses: {
     id: number | string;
     givenName: string;
     middleName: string;
     surname: string;
     postofficeCode: string | null;
+
     houseTo: string;
     indexTo: number;
     placeTo: string;
@@ -50,7 +51,7 @@ export type Settings = {
     roomTo: string | null;
     slashTo: string | null;
     streetTo: string;
-  };
+  }[];
 };
 
 export type User = {
