@@ -89,7 +89,7 @@ export type User = {
       productVariant: ProductVariant;
     }[];
   } | null;
-  settings: Settings;
+  settings: Settings | null;
 
   createdAt: Date;
   updatedAt: Date;
