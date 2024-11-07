@@ -1,4 +1,4 @@
-import type { ProductVariant, User } from '.';
+import type { InnStatus, ProductVariant, User } from '.';
 
 export type AcceptOrder = {
   barcode: string;
@@ -61,6 +61,9 @@ export type Order = {
     telAddress: string | null;
     updatedAt: Date;
   } | null;
+
+  innStatus: InnStatus;
+  email: string;
 
   createdAt: Date;
   updatedAt: Date;
