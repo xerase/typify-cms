@@ -119,4 +119,12 @@ export interface OrderController {
    * @returns
    */
   rejectOrder: (id: number | string) => Promise<Order>;
+
+  /**
+   * @Get('tracking/:id')
+   *
+   * @param id
+   * @returns
+   */
+  getOrderTracking: (id: number | string) => Promise<any>;
 }
