@@ -127,4 +127,13 @@ export interface OrderController {
    * @returns
    */
   getOrderTracking: (id: number | string) => Promise<any>;
+
+  /**
+   * @Patch('barcode/:id')
+   *
+   * @param id
+   * @param body
+   * @returns
+   */
+  changeOrderBarcode: (id: number | string, body: AcceptOrder) => Promise<Order>;
 }
