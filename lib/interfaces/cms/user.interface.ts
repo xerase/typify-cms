@@ -34,6 +34,16 @@ export interface UserController {
   getAllUsers: (skip: number, take: number) => Promise<User[]>;
 
   /**
+   * @Get('search')
+   *
+   * @param skip
+   * @param take
+   * @param search
+   * @returns
+   */
+  getAllUsersBySearch: (skip: number, take: number, search: string) => Promise<User[]>;
+
+  /**
    * @Get('by-id/:id')
    *
    * @param id
