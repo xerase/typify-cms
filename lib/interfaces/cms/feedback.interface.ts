@@ -66,6 +66,16 @@ export interface FeedbackController {
   getAllFeedbacks: (skip: number, take: number) => Promise<Feedback[]>;
 
   /**
+   * @Get('by-user')
+   *
+   * @param skip
+   * @param take
+   * @param userId
+   * @returns
+   */
+  getAllFeedbacksByUser: (skip: number, take: number, userId: number | string) => Promise<Feedback[]>;
+
+  /**
    * @Get('in-processing')
    *
    * @param skip
