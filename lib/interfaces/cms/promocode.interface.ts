@@ -27,4 +27,12 @@ export interface PromocodeController {
    * @returns
    */
   getPromocodes: () => Promise<PromocodeAllInfo[]>;
+
+  /**
+   * @Get('by-user')
+   *
+   * @param userId
+   * @returns
+   */
+  getPromocodeByUser: (userId: number | string) => Promise<PromocodeAllInfo[]>;
 }
