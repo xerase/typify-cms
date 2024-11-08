@@ -1,4 +1,4 @@
-import type { CreatePromocode, PromocodeAllInfo } from '../../types/cms';
+import type { CreatePromocode, PromocodeAllInfo, PromocodeWithUsers } from '../../types/cms';
 
 /**
  * @Controller('cms/promocode')
@@ -34,5 +34,5 @@ export interface PromocodeController {
    * @param userId
    * @returns
    */
-  getPromocodeByUser: (userId: number | string) => Promise<PromocodeAllInfo[]>;
+  getPromocodeByUser: (userId: number | string) => Promise<PromocodeWithUsers[]>;
 }
