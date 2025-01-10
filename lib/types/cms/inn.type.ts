@@ -1,4 +1,5 @@
 export type Inn = {
+  id: number | string;
   isAddressesMatch: boolean;
   address: string | null;
   bankName: string | null;
@@ -6,8 +7,8 @@ export type Inn = {
   corScore: string | null;
   factAddress: string | null;
   files: string[];
-  inn: string;
+  inn: string | null;
   name: string;
-  ogrn: string;
+  ogrn: string | null;
   rasScore: string;
 };
