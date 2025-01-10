@@ -10,5 +10,5 @@ export type Inn = {
   inn: string | null;
   name: string;
   ogrn: string | null;
-  rasScore: string;
+  rasScore: string | null;
 };
